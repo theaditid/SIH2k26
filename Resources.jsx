@@ -1,0 +1,4 @@
+import React from "react";
+import { BookOpen, FileText, FlaskConical, Database, HelpCircle } from "lucide-react";
+const items=[[BookOpen,"Knowledge Hub","Articles, guides and best practices."],[FileText,"Challenge Documents","Technical briefs and challenge reports."],[FlaskConical,"Innovation Toolkit","Templates and implementation resources."],[Database,"Data & Reports","Open datasets and impact reports."],[HelpCircle,"FAQs","Answers for every participant type."]];
+export default function Resources(){return <><section className="page-hero"><span className="eyebrow light">LEARN & BUILD</span><h1>Resources</h1><p>Knowledge and tools for citizens, students, researchers, institutions and partners.</p></section><section className="section"><div className="resource-grid">{items.map(([I,t,d])=><article className="resource-card" key={t}><I/><h2>{t}</h2><p>{d}</p><button className="link-arrow">Explore →</button></article>)}</div></section></> }

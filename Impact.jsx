@@ -1,0 +1,8 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { MapPin, Users, Building2, Lightbulb } from "lucide-react";
+import { Stat } from "../components/UI";
+
+const districts=["Ranchi","Dumka","Gumla","East Singhbhum","Palamu","Chatra","Latehar","Simdega"];
+
+export default function Impact(){return <><section className="page-hero"><span className="eyebrow light">DATA • PROGRESS • OUTCOMES</span><h1>Impact Across Jharkhand</h1><p>Track challenges, innovation and community outcomes across the state.</p></section><section className="section"><div className="stats-grid"><Stat value="24+" label="Districts"/><Stat value="1,250+" label="Challenges"/><Stat value="350+" label="Institutions"/><Stat value="5,000+" label="Students"/><Stat value="120+" label="Industry Partners"/><Stat value="180+" label="Solutions"/></div><div className="impact-layout"><div className="map-panel"><h2>District Activity</h2><div className="big-map">JHARKHAND<small>Interactive district map</small></div></div><div className="content-card"><h2>Challenge Pipeline</h2>{[["Submitted",1250],["Evaluated",940],["Prototype",360],["Pilot",240],["Implemented",180]].map(([x,n])=><div className="bar-row" key={x}><span>{x}</span><div><i style={{width:`${Math.max(12,n/1250*100)}%`}}/></div><b>{n}</b></div>)}</div></div><div className="district-list"><h2>Explore by District</h2>{districts.map((d,i)=><Link to={`/impact/district/${d}`} className="district-card" key={d}><MapPin/><div><b>{d}</b><span>{186-i*17} challenges • {42-i*3} solutions</span></div><span>→</span></Link>)}</div></section></> }
